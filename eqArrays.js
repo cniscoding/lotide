@@ -12,7 +12,6 @@ const eqArrays = function(array1, array2) {
     return false;
   }
   for (let i = 0; i < array1.length; i++) { //loop first array to get index i
-    //console.log('array1 :', array1[i], 'array2 :', array2[i]);
     if (array1[i] !== array2[i]) { // check if array1&2[i] are not the same
       return false; // if not return false
     }
@@ -20,7 +19,15 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)){
+    console.log(`⭕️⭕️⭕️ Assertion Array Passed: ${actual} === ${expected}`)
+  } else{
+    console.log(`❌❌❌ Assertion Array Failed: ${actual} !== ${expected}`); // failed
+  }
+};
+
 // TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 5], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 5], [1, 2, 3]), false);
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // true);
+assertArraysEqual([1, 2, 5], [1, 2, 3]); // false );
+assertArraysEqual([1, 'a', 3], [1, 'a', 3]); // true);
