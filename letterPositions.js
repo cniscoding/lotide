@@ -29,25 +29,28 @@ const assertArraysEqual = function(actual, expected) {
 
 const letterPositions = function(sentence) {
   const results = {};
+  let indexCounter = 0;
   for (let letters of sentence){
-    console.log('letters >', letters)
+    // console.log('letters >', letters)
     if (letters){
       if(results[letters]){ // push
-        console.log('letters >', letters, 'results(letter)', results[letters])
+        results[letters] = results[letters].push([indexCounter])
       } else{ // add new
-        results[letters] = [1]
-        console.log(' we got a new letter', letters)
-      }
-
+        results[letters] = [indexCounter]
+      } 
+      indexCounter ++
     }
   }
+  console.log(results)
   return results;
 };
 
 const result = letterPositions('hello')
 
 assertArraysEqual(result['h'], [0])
+assertArraysEqual(result['e'], [1])
 assertArraysEqual(result['l'], [2,3])
+assertArraysEqual(result['o'], [4])
 /*
 letterPositions("lighthouse in the house")
 
