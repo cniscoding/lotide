@@ -27,14 +27,16 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
+// need to add something to remove the ' ' from the object
 const letterPositions = function(sentence) {
-  const results = {};
-  let indexCounter = 0;
-  for (let letters of sentence){
-    // console.log('letters >', letters)
-      if(results[letters]){ // push
-        results[letters].push(indexCounter)
-      } else{ // add new
+  const results = {}; // result
+  let indexCounter = 0; // counter
+  for (let letters of sentence){ // loop
+    console.log('letters >', letters, ' results >', results[letters])
+      if(results[letters]){ // if key value pair already exist, push index to array.
+        results[letters].push(indexCounter) 
+      } 
+      if(!results[letters] && letters !== ' '){ // if key does not exist and not a space, create a new array
         results[letters] = [indexCounter]
       } 
       indexCounter ++
