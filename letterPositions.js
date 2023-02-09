@@ -32,18 +32,18 @@ const letterPositions = function(sentence) {
   let indexCounter = 0;
   for (let letters of sentence){
     // console.log('letters >', letters)
-    if (letters){
       if(results[letters]){ // push
-        results[letters] = results[letters].push([indexCounter])
+        results[letters].push(indexCounter)
       } else{ // add new
         results[letters] = [indexCounter]
       } 
       indexCounter ++
-    }
   }
   console.log(results)
   return results;
 };
+
+letterPositions("lighthouse in the house")
 
 const result = letterPositions('hello')
 
