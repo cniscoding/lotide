@@ -32,10 +32,11 @@ const middle = function(array) {
   const arrLength = array.length;
   let middleNum = [];
   let divide = arrLength / 2;
+  let isArrEven = arrLength % 2 === 0 // return true if even, return false if not
   if (arrLength < 3) { // do nothing
-  } else if (arrLength % 2 !== 0) { // odd numbers - return 1 number
+  } else if (!isArrEven) { // odd numbers - return 1 number
     middleNum.push(array[Math.floor(divide)])
-  } else if (arrLength % 2 === 0) { // even numbers - return 2 number
+  } else if (isArrEven) { // even numbers - return 2 number
     middleNum.push(array[divide -1])
     middleNum.push(array[divide])
   }
