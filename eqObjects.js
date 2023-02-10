@@ -30,35 +30,35 @@ const eqObjects = function(object1, object2) {
   } 
     for (key of keyObj1) {
       // console.log('object1[key]', object1[key])
-      console.log(Array.isArray(object1[key])) //confirmed is working to check array
+      // console.log(Array.isArray(object1[key])) //confirmed is working to check array
       if (Array.isArray(object1[key]) === true) {
         if (Array.isArray(object1[key]) === true) {
         // check if it's an array. then runs eqArrays function.
         eqArrays(object1[key], object2[key])
+        return true
         // console.log('eqarry >', eqArrays(object1[key], object2[key]))
         // console.log('we have an array naisdfasldk')
         }
       }
 
       if(object1[key] !== object2[key]) {
-        // console.log(object1[key] , object2[key])
+      //  console.log(object1[key] , object2[key])
         return false
       // console.log(keyObj2[0],keyObj2[1])
       // return false;
       }
-  
     }
     return true;
 }
 
-// const shirtObject = { color: "red", size: "medium" };
-// const anotherShirtObject= { size: "medium", color: "red" };
-// eqObjects(shirtObject , anotherShirtObject); // => true
-// assertEqual(eqObjects(shirtObject , anotherShirtObject), true)
+const shirtObject = { color: "red", size: "medium" };
+const anotherShirtObject= { size: "medium", color: "red" };
+eqObjects(shirtObject , anotherShirtObject); // => true
+assertEqual(eqObjects(shirtObject , anotherShirtObject), true)
 
-// const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-// eqObjects(shirtObject , longSleeveShirtObject); // => false
-// assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false)
+const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
+eqObjects(shirtObject , longSleeveShirtObject); // => false
+assertEqual(eqObjects(shirtObject , longSleeveShirtObject), false)
 
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
