@@ -28,25 +28,27 @@ const eqObjects = function(object1, object2) {
   if (keyObj1.length !== keyObj2.length) {
     return false;
   } 
-    for (key of keyObj1){
-      // console.log('keyObj1[key]', object1[key])
-      // console.log('213123',keyObj2[0],keyObj2[1])
-      // console.log(object1[key] , object2[key])
-      if(object1[key] !== object2[key]){
+    for (key of keyObj1) {
+      // console.log('object1[key]', object1[key])
+      console.log(Array.isArray(object1[key])) //confirmed is working to check array
+      if (Array.isArray(object1[key]) === true) {
+        if (Array.isArray(object1[key]) === true) {
+        // check if it's an array. then runs eqArrays function.
+        eqArrays(object1[key], object2[key])
+        // console.log('eqarry >', eqArrays(object1[key], object2[key]))
+        // console.log('we have an array naisdfasldk')
+        }
+      }
+
+      if(object1[key] !== object2[key]) {
         // console.log(object1[key] , object2[key])
-   
         return false
       // console.log(keyObj2[0],keyObj2[1])
       // return false;
       }
   
     }
-  return true;
-  // if (Object.keys(object1).length === Object.keys(object2).length && Object.keys(object1) === Object.keys(object2)){
-  //   return true;
-  // } else{
-  //   return false;
-  // }
+    return true;
 }
 
 // const shirtObject = { color: "red", size: "medium" };
