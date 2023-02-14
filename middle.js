@@ -12,6 +12,5 @@ const middle = function(array) {
   }
   return middleNum;
 };
-console.log(middle([1]));
 module.exports = middle;
 
