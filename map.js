@@ -12,9 +12,9 @@ const eqArrays = function(array1, array2) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)){
-    console.log(`⭕️⭕️⭕️ Assertion Array Passed: ${actual} === ${expected}`)
-  } else{
+  if (eqArrays(actual, expected)) {
+    console.log(`⭕️⭕️⭕️ Assertion Array Passed: ${actual} === ${expected}`);
+  } else {
     console.log(`❌❌❌ Assertion Array Failed: ${actual} !== ${expected}`); // failed
   }
 };
@@ -27,7 +27,7 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
 const results1 = map(words, word => word[0]);
 const results2 = map(words, word => word);
@@ -37,6 +37,6 @@ const results4 = map(words, word => word[2]);
 
 // TEST CODE
 assertArraysEqual(results1, ['g','c','t','m','t']); // pass
-assertArraysEqual(results2, words); ; // pass
+assertArraysEqual(results2, words);  // pass
 assertArraysEqual(results3,  ['ground1', 'control1', 'to1', 'major1', 'tom1']); //pass
 assertArraysEqual(results4,  ['a','b','c']); //fail

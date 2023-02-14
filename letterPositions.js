@@ -20,9 +20,9 @@ const eqArrays = function(array1, array2) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)){
-    console.log(`⭕️⭕️⭕️ Assertion Array Passed: ${actual} === ${expected}`)
-  } else{
+  if (eqArrays(actual, expected)) {
+    console.log(`⭕️⭕️⭕️ Assertion Array Passed: ${actual} === ${expected}`);
+  } else {
     console.log(`❌❌❌ Assertion Array Failed: ${actual} !== ${expected}`); // failed
   }
 };
@@ -31,32 +31,32 @@ const assertArraysEqual = function(actual, expected) {
 const letterPositions = function(sentence) {
   const results = {}; // result
   let indexCounter = 0; // counter
-  for (let letters of sentence){ // loop
-    console.log('letters >', letters, ' results >', results[letters])
-      if(results[letters]){ // if key value pair already exist, push index to array.
-        results[letters].push(indexCounter) 
-      } 
-      if(!results[letters] && letters !== ' '){ // if key does not exist and not a space, create a new array
-        results[letters] = [indexCounter]
-      } 
-      indexCounter ++
+  for (let letters of sentence) { // loop
+    console.log('letters >', letters, ' results >', results[letters]);
+    if (results[letters]) { // if key value pair already exist, push index to array.
+      results[letters].push(indexCounter);
+    }
+    if (!results[letters] && letters !== ' ') { // if key does not exist and not a space, create a new array
+      results[letters] = [indexCounter];
+    }
+    indexCounter ++;
   }
-  console.log(results)
+  console.log(results);
   return results;
 };
 
-letterPositions("lighthouse in the house")
+letterPositions("lighthouse in the house");
 
-const result = letterPositions('hello')
+const result = letterPositions('hello');
 
-assertArraysEqual(result['h'], [0])
-assertArraysEqual(result['e'], [1])
-assertArraysEqual(result['l'], [2,3])
-assertArraysEqual(result['o'], [4])
+assertArraysEqual(result['h'], [0]);
+assertArraysEqual(result['e'], [1]);
+assertArraysEqual(result['l'], [2,3]);
+assertArraysEqual(result['o'], [4]);
 /*
 letterPositions("lighthouse in the house")
 
-{ 
+{
   l: [0],
   i: [1, 11],
   g: [2],

@@ -22,8 +22,8 @@ const countLetters = function(input) {
   }
   console.log('countObj >', countObj);
   return countObj;
-}
-countLetters("lighthouse in the house")
+};
+countLetters("lighthouse in the house");
 
 const result1 = countLetters('lighthouse in the house');
 
@@ -44,5 +44,5 @@ assertEqual(result1["z"], undefined);
   s: 2,
   e: 3,
   n: 1,
-} 
+}
 */

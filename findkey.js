@@ -29,4 +29,4 @@ const test = findKey({
 }, x => x.stars === 2); // => "noma"
 
 
-assertEqual(test, 'noma')
+assertEqual(test, 'noma');
