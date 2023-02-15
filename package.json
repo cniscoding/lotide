@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@cniscoding/lotide",
   "version": "1.0.0",
   "description": "",
   "main": "assertArraysEqual.js",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/cniscoding/lotide.git"
   },
-  "author": "",
+  "author": "cniscoding",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cniscoding/lotide/issues"
