@@ -11,4 +11,5 @@ const flatten = function(array) {
   }
   console.log(newArr);
 };
-flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
+
+module.exports = flatten;
